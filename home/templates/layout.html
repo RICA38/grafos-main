@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        <!-- Titulo de cada página -->
+        {% endblock %} Grafo
+    </title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body class="">
+    <header class="flex container mx-auto py-10 justify-center lg:justify-between flex-wrap">
+        <div class="px-5 flex">
+            <!-- LOGO -->
+            <img src="{% static 'img/grafo.png' %}" alt="imgLogo" class="w-28 ">
+            <h1 class="text-5xl font-bold flex px-5 mt-8 transform hover:shadow-md"> <a href="/" class="">GRAFOS CON DJANGO</a></h1>
+
+        </div>
+
+        <nav class="leading">
+            <ul class="flex	mt-7">
+                <li class="px-5 text-2xl py-4"><a class="block transform hover:scale-110 transition-all hover:text-green-500" href="{% url 'home' %}">Inicio</a></li>
+                <li class="px-5 text-2xl py-4 "><a class="block transform hover:scale-110 transition-all hover:text-green-500" href="{% url 'grafos' %}">Grafos</a></li>
+                <li class="px-5 text-2xl py-4 "><a class="block transform hover:scale-110 transition-all hover:text-green-500" href="{% url 'acerca' %}">Acerca</a></li>
+                <li class="px-5 text-2xl py-4 "><a class="block transform hover:scale-110 transition-all hover:text-green-500" href="{% url 'contacto' %}">Contacto</a></li>
+            </ul>
+        </nav>
+
+
+
+    </header>
+    <div id="content " class="container mx-auto bg-white shadow-xl p-10 rounded-xl ">
+        {% block content %}
+        <!-- Un contenido -->
+        {% endblock %}
+    </div>
+
+
+
+
+    <footer class="container mx-auto p-5 text-center bg-gray-100 mt-14 rounded-xl shadow-xl">
+        <p>Pagina creada por Cristian Hernández & Ivanvvi Casañas &copy; {% now 'd/m/Y' %}</p>
+    </footer>
+</body>
+
+</html>

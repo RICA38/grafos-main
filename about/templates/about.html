@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block title %} Acerca {% endblock%}
+
+{% block content %}
+<div class="text-justify">
+    <h3 class="text-2xl pb-2">¿ Qué son los grafos? </h3>
+    <p class="pb-5">Hemos considerado los árboles como una generalización del concepto de lista porque
+        permiten que un elemento tenga más de un sucesor. Los grafos aparecen como una extensión
+        del concepto de árbol, ya que en este nuevo tipo de estructuras cada elemento puede tener,
+        además de más de un sucesor, varios elementos predecesores.</p>
+    <p class="pb-5">Esta propiedad hace a los grafos las estructuras más adecuadas para representar
+        situaciones donde la relación entre los elementos es completamente arbitraria, como pueden
+        ser mapas de carreteras, sistemas de telecomunicaciones, circuitos impresos o redes de
+        ordenadores. Aunque hay estructuras más complejas que los grafos, no las veremos en este
+        curso.</p>
+    <p class="pb-5">Los grafos se pueden clasificar en diferentes tipos dependiendo de cómo se defina la
+        relación entre los elementos: podemos encontrar grafos dirigidos o no dirigidos y etiquetados
+        o no etiquetados. También se pueden combinar ambas categorías.</p>
+
+    <p class="pb-5">Formalmente, <strong> un grafo G consiste en dos conjuntos finitos N y A. N es el conjunto de
+        elementos del grafo, también denominados vértices o nodos. A es el conjunto de arcos, que
+        son las conexiones que se encargan de relacionar los nodos para formar el grafo. Los arcos
+        también son llamados aristas o líneas. </strong>    </p>
+
+</div>
+{% endblock %}

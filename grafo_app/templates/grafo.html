@@ -1,0 +1,55 @@
+{% extends 'layout.html' %} {% block title %} Grafo {% endblock%} {% block content %}
+<form>
+    {%csrf_token %}
+    <label for="team_name">Enter umbral: </label>
+    <input id="team_name" type="text" name="name_field" value=" ">
+
+    <button type="submit" name='mybtn2'>Procesar</button>
+
+
+</form>
+
+<div class="mx-auto w-full text-center flex justify-between mt-3 flex-wrap">
+    <div>
+        <h1 class="text-3xl text-center">Grafos</h1>
+        <div clasS="box overflow-y-scroll ">
+
+            <table class="my-5 mx-auto">
+                <th class="px-3 py-1 border">ID</th>
+                <th class="px-3 py-1 border">Temperatura</th>
+                <th class="px-3 py-1 border">Color</th>
+                <th class="px-3 py-1 border">Inflamation</th>
+
+                {% for i in tejidos %}
+                <tr>
+                    <td class="px-3 py-1 border-t-2 border-b-2 border-l-2"> {{i.id}} </td>
+                    <td class="px-3 py-1 border-t-2 border-b-2 "> {{i.temperatura}} </td>
+                    <td class="px-3 py-1 border-t-2 border-b-2 "> {{i.color}} </td>
+                    <td class="px-3 py-1 border-t-2 border-b-2 border-r-2"> {{i.inflammation}} </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="w-2/3 mt-5 lg:mt-0">
+        <h3 class="text-center text-3xl">Distancia Euclidea</h3>
+        <div class="box bg-gray-100 p-3 rounded-lg overflow-x-scroll my-5 ml-5 ">
+            <table>
+                <th></th>
+                {% for i in id %}
+                <th>{{i}}</th>
+                {% endfor %} {% for i in euclidea %}
+                <tr>
+                    <th>{{forloop.counter}}</th>
+
+                    {% for j in i %}
+                    <td class="px-4 py-1 border-t-2"> {{j}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
