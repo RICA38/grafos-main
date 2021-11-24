@@ -25,5 +25,7 @@ urlpatterns = [
     path('grafos/', grafoApp.grafo, name="grafos"),
     path('contacto/', myContact.contact, name="contacto"),
     path('acerca', myAbout.about, name="acerca"),
-    path('procesa/',grafoApp.procesa, name="procesa")
+    path('procesa/',grafoApp.procesa, name="procesa"),
+    path('terminos-y-condiciones/',myContact.terminos, name="terminos"),
+    
 ]
