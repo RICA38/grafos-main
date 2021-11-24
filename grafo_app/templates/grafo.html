@@ -1,56 +1,94 @@
-{% extends 'layout.html' %} {% block title %} Grafo {% endblock%} {% block content %}
+{% extends 'layout.html' %}
 
-<form action="" method="get">
-    {%csrf_token %}
-    <label for="team_name">Ingresa el umbral: </label>
-    <input id="team_name" type="text" name="name_field" value=" ">
+{% block title %} Grafo {% endblock%}
+}
+{% block content %}
 
-    <button type="submit" name='mybtn2'>Procesar</button>
-
-
-</form>
-
-<div class="mx-auto w-full text-center flex justify-between mt-3 flex-wrap">
-    <div>
-        <h1 class="text-3xl text-center">Grafos</h1>
-        <div clasS="box overflow-y-scroll ">
-
-            <table class="my-5 mx-auto">
-                <th class="px-3 py-1 border">ID</th>
-                <th class="px-3 py-1 border">Temperatura</th>
-                <th class="px-3 py-1 border">Color</th>
-                <th class="px-3 py-1 border">Inflamation</th>
-
-                {% for i in tejidos %}
-                <tr>
-                    <td class="px-3 py-1 border-t-2 border-b-2 border-l-2"> {{i.id}} </td>
-                    <td class="px-3 py-1 border-t-2 border-b-2 "> {{i.temperatura}} </td>
-                    <td class="px-3 py-1 border-t-2 border-b-2 "> {{i.color}} </td>
-                    <td class="px-3 py-1 border-t-2 border-b-2 border-r-2"> {{i.inflammation}} </td>
-                </tr>
-                {% endfor %}
-            </table>
-        </div>
+    <div class="w-1/3 mx-auto">
+        <form action="{% url 'procesa' %}" method="POST">
+            {%csrf_token %}
+            <label for="umbral" class="text-xl float-left block w-full text-center block mb-3">Ingresa el umbral: </label>
+            <div class="w-full">
+                <input type="text" name="umbral" class="border-gray-300 border-2 px-5 py-2 rounded-md block mx-auto w-1/2 outline-none text-gray-400">
+            </div>
+            <button type="submit" class="bg-green-500 text-white py-2 px-3 font-bold rounded-lg hover:bg-green-400 block mx-auto mt-3 block">Procesar</button>
+        </form>
     </div>
-    <div class="w-2/3 mt-5 lg:mt-0">
-        <h3 class="text-center text-3xl">Distancia Euclidea</h3>
-        <div class="box bg-gray-100 p-3 rounded-lg overflow-x-scroll my-5 ml-5 ">
-            <table>
-                <th></th>
-                {% for i in id %}
-                <th>{{i}}</th>
-                {% endfor %} {% for i in euclidea %}
-                <tr>
-                    <th>{{forloop.counter}}</th>
 
-                    {% for j in i %}
-                    <td class="px-4 py-1 border-t-2"> {{j}}</td>
+    <div class="mx-auto w-full text-center flex justify-between mt-3 flex-wrap">
+        <div>
+            <h1 class="text-3xl text-center">Grafos</h1>
+            <div clasS="box overflow-y-scroll ">
+
+                <table class="my-5 mx-auto">
+                    <th class="px-3 py-1 border">ID</th>
+                    <th class="px-3 py-1 border">Temperatura</th>
+                    <th class="px-3 py-1 border">Color</th>
+                    <th class="px-3 py-1 border">Inflamation</th>
+
+                    {% for i in tejidos %}
+                    <tr>
+                        <td class="px-3 py-1 border-t-2 border-b-2 border-l-2"> {{i.id}} </td>
+                        <td class="px-3 py-1 border-t-2 border-b-2 "> {{i.temperatura}} </td>
+                        <td class="px-3 py-1 border-t-2 border-b-2 "> {{i.color}} </td>
+                        <td class="px-3 py-1 border-t-2 border-b-2 border-r-2"> {{i.inflammation}} </td>
+                    </tr>
                     {% endfor %}
-                </tr>
-                {% endfor %}
-            </table>
+                </table>
+            </div>
         </div>
-    </div>
+        
+        {% if umbral %}
+                        
+            <div class=" mx-auto mt-5 lg:mt-0" >
+                <h3 class="text-center text-3xl">Proceso de Umbral</h3>
+                <div class="box bg-gray-100 p-3 rounded-lg overflow-x-scroll my-5 ml-5 ">
+                    <table>
+                        <th>Vo</th>
+                        <th>Vf</th>
+                        <th>Distan</th>
+                        <th>Si/No</th>
 
-</div>
+                        {% for i in euclidea %}    
+                            {% for j in i %}
+                                <tr class="px-10 w-full"> <td class="px-4 py-1 border-t-2">{{forloop.parentloop.counter}}</td> <td class="px-4 py-1 border-t-2">
+                                    {{forloop.counter}}</td> <td class="px-7 py-1 border-t-2">{{j}}</td>  <td class="px-4 py-1 border-t-2"> 
+                                    {% if j > umbral %}
+                                        No
+                                    {% else %}
+                                        Si
+                                    {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endfor %} 
+                    
+                    </table>
+                </div>
+            </div>
+        {% else %}
+        
+        <div class="w-2/3 mt-5 lg:mt-0">
+            <h3 class="text-center text-3xl">Distancia Euclidea</h3>
+            <div class="box bg-gray-100 p-3 rounded-lg overflow-x-scroll my-5 ml-5 ">
+                <table>
+                    <th></th>
+                    {% for i in id %}
+                    <th>{{i}}</th>
+                    {% endfor %} {% for i in euclidea %}
+                    <tr>
+                        <th>{{forloop.counter}}</th>
+    
+                        {% for j in i %}
+                        <td class="px-4 py-1 border-t-2"> {{j}}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        {% endif %}
+
+    </div>
 {% endblock %}

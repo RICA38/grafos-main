@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 from .models import Tejido
 import pandas as pd
 from scipy.spatial import distance
+tejidos = Tejido.objects.all()
 
 # Create your views here.
 def grafo(request):
@@ -17,9 +18,7 @@ def grafo(request):
     for i in range(200):
         id.append(i+1)
 
-    tejidos = Tejido.objects.all()
     return render(request, 'grafo.html' , {'tejidos': tejidos, 'euclidea':euclidea(tejidos) , 'id':id})
-
 
 def euclidea(tejidos):
     tejidosTotal = []
@@ -36,5 +35,11 @@ def euclidea(tejidos):
         for j in range(len(tejidosTotal)):
             f.append(round(distance.euclidean(tejidosTotal[i],tejidosTotal[j], 6 )))
         mEuclidea.append(f)
-
+    # print(mEuclidea)
     return mEuclidea
+
+def procesa(request):
+    if(request.method == 'POST'):
+        umbral = int(request.POST['umbral'])
+    return render(request, 'grafo.html' , {'tejidos': tejidos, 'euclidea':euclidea(tejidos) , 'umbral':umbral})
+
