@@ -43,8 +43,7 @@ def procesa(request):
         #umbral =forms.IntegerField(min_value=1,max_value=100)
         umbral = int(request.POST['umbral'])
         
-        
-        
+            
         
     return render(request, 'grafo.html' , {'tejidos': tejidos, 'euclidea':euclidea(tejidos) , 'umbral':umbral})
 
