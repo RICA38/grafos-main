@@ -23,7 +23,7 @@
         <div class="px-5 flex">
             <!-- LOGO -->
             <img src="{% static 'img/grafo.png' %}" alt="imgLogo" class="w-28 ">
-            <h1 class="text-5xl font-bold flex px-5 mt-8 transform hover:shadow-md"> <a href="/" class="">GRAFOS CON
+            <h1 class="text-5xl font-bold flex px-5 m-5 p-2 transform shadow-md logoText transition-all"> <a href="/" class="">GRAFOS CON
                     DJANGO</a></h1>
 
         </div>
@@ -31,16 +31,16 @@
         <nav class="leading">
             <ul class="flex	mt-7">
                 <li class="px-5 text-2xl py-4"><a
-                        class="block transform hover:scale-110 transition-all hover:text-green-500"
+                        class="block transform hover:scale-110 transition-all hover:text-pink-500"
                         href="{% url 'home' %}">Inicio</a></li>
                 <li class="px-5 text-2xl py-4 "><a
-                        class="block transform hover:scale-110 transition-all hover:text-green-500"
+                        class="block transform hover:scale-110 transition-all hover:text-pink-500"
                         href="{% url 'grafos' %}">Grafos</a></li>
                 <li class="px-5 text-2xl py-4 "><a
-                        class="block transform hover:scale-110 transition-all hover:text-green-500"
+                        class="block transform hover:scale-110 transition-all hover:text-pink-500"
                         href="{% url 'acerca' %}">Acerca</a></li>
                 <li class="px-5 text-2xl py-4 "><a
-                        class="block transform hover:scale-110 transition-all hover:text-green-500"
+                        class="block transform hover:scale-110 transition-all hover:text-pink-500"
                         href="{% url 'contacto' %}">Contacto</a></li>
             </ul>
         </nav>
@@ -65,7 +65,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
-        </script>
+    </script>
 
     <script>
         $num = $('.my-card').length;

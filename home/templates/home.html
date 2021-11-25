@@ -2,17 +2,56 @@
 {% block title %} home {% endblock%}
 
 {% block content %}
+{% load static %}
 
 <div class="card-carousel">
-    <div class="my-card"></div>
-    <div class="my-card"></div>
-    <div class="my-card"></div>
-    <div class="my-card"></div>
-    <div class="my-card"></div>
-    <div class="my-card"></div>
-    <div class="my-card"></div>
-    <div class="my-card"></div>
-    <div class="my-card"></div>
-  </div>
- 
+    <div class="my-card">
+        <img src="{% static 'img/cancer1.jpg' %}" alt="" class="h-full object-cover	">
+    </div>
+    <div class="my-card">
+        <img src="{% static 'img/cancer3.gif' %}" alt="" class="mx-auto h-full object-cover	">
+
+    </div>
+    <div class="my-card">
+        <img src="{% static 'img/cancer2.jpg' %}" alt="" class="h-full object-cover	">
+
+    </div>
+</div>
+<div class="flex mt-14 flex-wrap">
+
+    <div class="w-full md:w-3/4 md:px-16 px-2 text-xl text-justify">
+        <h3 class="text-4xl text-pink-400 my-5">¿ Qué es el cancer de mama ?</h3>
+        <p><strong class="font-bold"> El cáncer de mama es el crecimiento descontrolado de las células mamarias.
+            </strong>Para entender mejor el cáncer de
+            mama, debemos entender cómo se desarrolla cualquier cáncer.</p>
+
+        <p class="pt-5">El cáncer es el resultado de mutaciones, o cambios anómalos, en los genes que regulan el
+            crecimiento de las
+            células y las mantienen sanas. Los genes se encuentran en el núcleo de las células, el cual actúa como la
+            "sala de control" de cada célula. Normalmente, las células del cuerpo se renuevan mediante un proceso
+            específico llamado crecimiento celular: las células nuevas y sanas ocupan el lugar de las células viejas que
+            mueren. Pero con el paso del tiempo, las mutaciones pueden "activar" ciertos genes y "desactivar" otros en
+            una célula.
+            <img src="{% static 'img/cancer4.gif' %}" class="float-left mt-3 mr-3 w-1/2 rounded-lg">
+            La célula modificada adquiere la capacidad de dividirse sin ningún tipo de control u orden, por
+            lo que produce más células iguales y genera un tumor.
+        </p>
+        <p class="pt-5">El término <strong> "cáncer de mama" </strong>hace referencia a un tumor maligno que se ha
+            desarrollado a partir de células
+            mamarias. Generalmente, el cáncer de mama se origina en las células de los lobulillos, que son las glándulas
+            productoras de leche, o en los conductos, que son las vías que transportan la leche desde los lobulillos
+            hasta el pezón. Con menos frecuencia, el cáncer de mama puede originarse en los tejidos estromales, que
+            incluyen a los tejidos conjuntivos grasos y fibrosos de la mama.</p>
+        <p class="pt-5">Con el paso del tiempo, las células cancerígenas pueden invadir el tejido mamario sano circundante y llegar a
+            los ganglios linfáticos (pequeños órganos que eliminan sustancias extrañas del cuerpo) de las axilas. Si las
+            células cancerígenas llegan a los ganglios linfáticos, obtienen una puerta de acceso hacia otras partes del
+            cuerpo. Los estadios del cáncer de mama hacen referencia a lo lejos que se han propagado las células
+            cancerígenas más allá del tumor original. </p>
+    </div>
+
+    <aside class="w-full md:w-1/4 bg-pink-200 border-2 rounded-xl p-10">
+        <h4 class="text-white text-4xl">Aside</h4>
+    </aside>
+</div>
+
 {% endblock %}

@@ -6,6 +6,14 @@ body {
     height: 800px;
 }
 
+.logoText{
+    text-shadow: 5px 1px 15px #FBCFE8;
+}
+
+.logoText:hover{
+    box-shadow: 1px 2px 5px #EC4899;
+
+}
 .form-quejas {
     width: 400px !important;
     margin: auto !important;
@@ -24,7 +32,7 @@ body {
     padding: 10px !important;
     border-radius: 4px !important;
     margin-bottom: 16px !important;
-    border: 1px solid #1f53c5 !important;
+    border: 1px solid #EC4899 !important;
     font-size: 18px !important;
     float: left;
     display: block;
@@ -58,7 +66,7 @@ body {
 
 .form-quejas .boton {
     width: 100% !important;
-    background: #1f53c5 !important;
+    background: #EC4899 !important;
     border: none !important;
     padding: 12px !important;
     color: white !important;
@@ -78,7 +86,7 @@ body {
 
 .card-carousel .my-card {
     height: 20rem;
-    width: 12rem;
+    width: 100%;
     position: relative;
     z-index: 1;
     -webkit-transform: scale(0.6) translateY(-2rem);
@@ -86,8 +94,7 @@ body {
     opacity: 0;
     cursor: pointer;
     pointer-events: none;
-    background: #2e5266;
-    background: linear-gradient(to top, #2e5266, #6e8898);
+    background: #FFA4BA;
     transition: 1s;
 }
 
@@ -123,7 +130,7 @@ body {
 }
 
 .card-carousel .my-card:nth-child(0):before {
-    content: '0';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -135,7 +142,6 @@ body {
 }
 
 .card-carousel .my-card:nth-child(1):before {
-    content: '1';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -147,7 +153,6 @@ body {
 }
 
 .card-carousel .my-card:nth-child(2):before {
-    content: '2';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -159,19 +164,6 @@ body {
 }
 
 .card-carousel .my-card:nth-child(3):before {
-    content: '3';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 3rem;
-    font-weight: 300;
-    color: #fff;
-}
-
-.card-carousel .my-card:nth-child(4):before {
-    content: '4';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -185,5 +177,5 @@ body {
 .Text h2 {
     font-size: 100px !important;
     margin-bottom: 100px !important;
-    color: rgb(161, 14, 14);
+    color: #EC4899
 }
