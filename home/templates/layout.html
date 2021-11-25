@@ -14,7 +14,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/abca628734.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -23,7 +23,8 @@
         <div class="px-5 flex">
             <!-- LOGO -->
             <img src="{% static 'img/grafo.png' %}" alt="imgLogo" class="w-28 ">
-            <h1 class="text-5xl font-bold flex px-5 m-5 p-2 transform shadow-md logoText transition-all"> <a href="/" class="">GRAFOS CON
+            <h1 class="text-5xl font-bold flex px-5 m-5 p-2 transform shadow-md logoText transition-all"> <a href="/"
+                    class="">GRAFOS CON
                     DJANGO</a></h1>
 
         </div>
@@ -57,15 +58,85 @@
 
 
 
-    <footer class="container mx-auto p-5 text-center bg-gray-100 mt-14 rounded-xl shadow-xl">
-        <p>Pagina creada por Cristian Hernández & Ivan Casañas &copy; {% now 'd/m/Y' %}</p>
+    <footer class=" bg-white mt-14 rounded-xl shadow-xl">
+        <div class="mx-auto container mb-10">
+            <div class="flex flex-wrap pt-5 footer">
+                <div class="w-full md:w-1/3 px-16">
+                    <h3 class="text-3xl mb-10">Bibliografía</h3>
+                    <ul>
+                        <li class="mt-2"> <a
+                                href="https://www.breastcancer.org/es/sintomas/cancer_de_mama/que_es_cancer_mama"
+                                target="_blank">¿Qué es el cancer de mama?</a>
+                        </li>
+
+                        <li class="mt-2"> <a href="https://www.grapheverywhere.com/que-son-los-grafos"
+                                target="_blank">¿Qué son los grafos?</a>
+                        </li>
+
+                        <li class="mt-2"> <a href="https://docs.djangoproject.com/en/3.2/" target="_blank">Documentación
+                                Django</a>
+                        </li>
+
+                        <li class="mt-2"> <a href="https://tailwindcss.com/docs/" target="_blank">Documentación Tailwind
+                                CSS</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="w-full md:w-1/3 px-16">
+                    <h3 class="text-3xl mb-10 mt-5 md:mt-0">Redes sociales</h3>
+                    <ul class="">
+                        <li class="mt-2"> <a href="https://www.facebook.com/Iguanitochinitobebe/" target="_blank"><i
+                                    class="px-2 fab fa-facebook text-pink-400 text-xl transform hover:scale-110 transition-all hover:text-pink-800"></i>
+                                Chino Rubik</a>
+                        </li>
+
+                        <li class="mt-2"> <a href="https://www.facebook.com/rae.GrilloG38" target="_blank">
+                                <i
+                                    class="px-2 fab fa-facebook text-pink-400 text-xl transform hover:scale-110 transition-all hover:text-pink-800"></i>
+                                Grillo Gamer 38</a>
+                        </li>
+
+                        <li class="mt-2"> <a href="https://www.facebook.com/isiprogrammer" target="_blank"> <i
+                                    class="px-2 fab fa-facebook text-pink-400 text-xl transform hover:scale-110 transition-all hover:text-pink-800"></i>La
+                                banda de
+                                ISI</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="w-full md:w-1/3 px-16  mt-5 md:mt-0">
+                    <h3 class="text-3xl mb-10">¿ Quiénes somos ?</h3>
+                    <ul>
+                        <li class="mt-2"> <a href="https://www.uaemex.mx/" target="_blank">UAEMex</a>
+                        </li>
+                        <li class="mt-2"> <a
+                                href="http://uap-neza.blogspot.com/p/ingenieria-en-sistemas-inteligentes.html"
+                                target="_blank">¿Qué es ISI?</a>
+                        </li>
+
+                        <li class="mt-2"> <a href="" target="_blank">¿Dónde estamos?</a>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+        <p class="text-center  bg-black text-white">Pagina creada por Cristian Hernández & Ivan Casañas &copy; {% now 'd/m/Y' %}</p>
+
     </footer>
 
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
-    </script>
+        </script>
 
     <script>
         $num = $('.my-card').length;
